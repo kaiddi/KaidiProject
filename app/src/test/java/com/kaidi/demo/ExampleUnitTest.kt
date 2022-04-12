@@ -12,6 +12,10 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
+//        CollectionDemo.main()
+
+        println("1111")
+        println("11 :${Demo.clearTimestampH_M_S(1649726465000)}")
         assertEquals(4, 2 + 2)
     }
 }
