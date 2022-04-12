@@ -3,6 +3,7 @@ package com.kaidi.demo
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.util.HashMap
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,10 +13,9 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-//        CollectionDemo.main()
+//        ReflectionDemo.accessPrivate()
+        ReflectionDemo.getClassRelatedInfo();
 
-        println("1111")
-        println("11 :${Demo.clearTimestampH_M_S(1649726465000)}")
         assertEquals(4, 2 + 2)
     }
 }

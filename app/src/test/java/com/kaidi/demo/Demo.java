@@ -1,5 +1,7 @@
 package com.kaidi.demo;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -27,7 +29,7 @@ class Demo {
 
     static int findMissingNumber(int start, int end, List<Integer> list) {
         for (int i : list) {
-            if (i != start){
+            if (i != start) {
                 return start;
             }
             start++;
@@ -35,12 +37,12 @@ class Demo {
         return 0;
     }
 
-    public static Long clearTimestampH_M_S(Long timestamp){
+    public static Long clearTimestampH_M_S(Long timestamp) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(timestamp);
         calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MINUTE,0);
-        calendar.set(Calendar.HOUR,0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR, 0);
         return calendar.getTimeInMillis();
     }
 
