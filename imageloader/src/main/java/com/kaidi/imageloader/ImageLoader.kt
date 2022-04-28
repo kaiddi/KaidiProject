@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.ImageView
 import java.net.HttpURLConnection
 import java.net.URL
@@ -19,7 +18,7 @@ object ImageLoader {
 
     const val TAG = "ImageLoader"
 
-    private val mImageCache = ImageCache()
+    private var mImageCache: ImageCache = MemoryCache()
 
     private val mExecutorService =
         Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
@@ -41,6 +40,10 @@ object ImageLoader {
             }
             mImageCache.put(url, bitmap)
         }
+    }
+
+    fun setImageCache(imageCache: ImageCache) {
+        mImageCache = imageCache
     }
 
     private fun updateImageView(imageView: ImageView, bitmap: Bitmap) {
