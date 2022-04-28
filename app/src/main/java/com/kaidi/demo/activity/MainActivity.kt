@@ -1,6 +1,8 @@
 package com.kaidi.demo.activity
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.kaidi.demo.R
@@ -23,10 +25,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun imageLoaderTest() {
-        ImageLoader().displayImage(
+        ImageLoader.displayImage(
             url = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
             imageView = findViewById(R.id.imageview)
         )
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            ImageLoader.displayImage(
+                url = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+                imageView = findViewById(R.id.imageview2)
+            )
+        }, 2000)
     }
 
     private fun dialogInterceptorTest() {
