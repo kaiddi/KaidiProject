@@ -7,6 +7,7 @@ import com.kaidi.demo.R
 import com.kaidi.demo.util.dialog.AInterceptorImpl
 import com.kaidi.demo.util.dialog.BInterceptorImpl
 import com.kaidi.demo.util.dialog.DialogManager
+import com.kaidi.imageloader.ImageLoader
 
 /**
  * @创建者 ykd
@@ -17,6 +18,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        imageLoaderTest()
+//        dialogInterceptorTest()
+    }
+
+    private fun imageLoaderTest() {
+        ImageLoader().displayImage(
+            url = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+            imageView = findViewById(R.id.imageview)
+        )
+    }
+
+    private fun dialogInterceptorTest() {
         DialogManager.addInterceptor(AInterceptorImpl())
         DialogManager.addInterceptor(BInterceptorImpl())
 
