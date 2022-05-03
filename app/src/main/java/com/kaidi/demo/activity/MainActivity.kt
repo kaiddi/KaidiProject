@@ -6,6 +6,7 @@ import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.kaidi.demo.R
+import com.kaidi.demo.manager.LocationManager
 import com.kaidi.demo.util.dialog.AInterceptorImpl
 import com.kaidi.demo.util.dialog.BInterceptorImpl
 import com.kaidi.demo.util.dialog.DialogManager
@@ -16,12 +17,25 @@ import com.kaidi.imageloader.ImageLoader
  * @描述
  */
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        imageLoaderTest()
+        locationTest()
+//        imageLoaderTest()
 //        dialogInterceptorTest()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    private fun locationTest() {
+        val locationManager = LocationManager(this) {
+
+        }
+        lifecycle.addObserver(locationManager)
     }
 
     private fun imageLoaderTest() {
