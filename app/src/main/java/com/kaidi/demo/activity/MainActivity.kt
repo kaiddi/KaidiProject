@@ -1,10 +1,12 @@
 package com.kaidi.demo.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.kaidi.demo.R
 import com.kaidi.demo.manager.LocationManager
 import com.kaidi.demo.util.dialog.AInterceptorImpl
@@ -22,13 +24,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        locationTest()
+        serviceTest()
+//        lifecycleScopeTest()
+//        locationTest()
 //        imageLoaderTest()
 //        dialogInterceptorTest()
     }
 
+
+    private fun serviceTest() {
+        findViewById<View>(R.id.btn1).setOnClickListener {
+            startActivity(Intent(this, TestServiceActivity::class.java))
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    private fun lifecycleScopeTest() {
+        // 协程也是有生命周期的，使用 lifecycleScope 可以确保宿主销毁后，当中的协程任务也被取消
+        lifecycleScope.launchWhenResumed {
+
+        }
     }
 
     private fun locationTest() {
@@ -56,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         DialogManager.addInterceptor(AInterceptorImpl())
         DialogManager.addInterceptor(BInterceptorImpl())
 
-        findViewById<View>(R.id.btn_show).setOnClickListener {
+        findViewById<View>(R.id.btn1).setOnClickListener {
             DialogManager.show(this)
         }
     }
