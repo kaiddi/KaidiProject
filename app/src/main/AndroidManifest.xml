@@ -24,6 +24,8 @@
             android:name=".activity.ScreenChangeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
+        <activity android:name=".activity.touch.TouchTestActivity" />
+
         <service android:name=".service.TestService" />
     </application>
 

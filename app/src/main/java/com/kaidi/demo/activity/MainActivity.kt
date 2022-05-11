@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.kaidi.demo.R
+import com.kaidi.demo.activity.touch.TouchTestActivity
 import com.kaidi.demo.manager.LocationManager
 import com.kaidi.demo.util.dialog.AInterceptorImpl
 import com.kaidi.demo.util.dialog.BInterceptorImpl
@@ -24,12 +25,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        screenChangeTest()
+        touchEventTest()
+//        screenChangeTest()
 //        serviceTest()
 //        lifecycleScopeTest()
 //        locationTest()
 //        imageLoaderTest()
 //        dialogInterceptorTest()
+    }
+
+    private fun touchEventTest() {
+        findViewById<View>(R.id.btn1).setOnClickListener {
+            startActivity(Intent(this, TouchTestActivity::class.java))
+        }
     }
 
     private fun screenChangeTest() {
