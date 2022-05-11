@@ -24,13 +24,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        serviceTest()
+        screenChangeTest()
+//        serviceTest()
 //        lifecycleScopeTest()
 //        locationTest()
 //        imageLoaderTest()
 //        dialogInterceptorTest()
     }
 
+    private fun screenChangeTest() {
+        findViewById<View>(R.id.btn1).setOnClickListener {
+            startActivity(Intent(this, ScreenChangeActivity::class.java))
+        }
+    }
 
     private fun serviceTest() {
         findViewById<View>(R.id.btn1).setOnClickListener {
