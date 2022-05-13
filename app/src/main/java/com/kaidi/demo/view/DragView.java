@@ -1,10 +1,14 @@
 package com.kaidi.demo.view;
 
 import android.content.Context;
+import android.os.Binder;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -12,6 +16,7 @@ import androidx.annotation.Nullable;
  */
 
 public class DragView extends ImageView {
+
     public DragView(Context context) {
         super(context);
     }
