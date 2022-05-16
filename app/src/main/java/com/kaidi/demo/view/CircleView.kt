@@ -20,9 +20,11 @@ class CircleView : View {
         Color.parseColor("#2196F3"), Shader.TileMode.CLAMP
     )
 
+    private val mStokeWidth = 30f
+
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
-        strokeWidth = 30f
+        strokeWidth = mStokeWidth
         strokeCap = Paint.Cap.ROUND
     }
 
@@ -65,7 +67,7 @@ class CircleView : View {
         )
 
         val w = width.toFloat()
-        val padding = 20f
+        val padding = mStokeWidth
 
         val rect = RectF(0f + padding, 0f + padding, w - padding, w - padding)
 

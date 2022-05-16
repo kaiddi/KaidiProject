@@ -26,6 +26,7 @@
 
         <activity android:name=".activity.touch.TouchTestActivity" />
         <activity android:name=".activity.anim.AnimActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
 
         <service android:name=".service.TestService" />
     </application>
