@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        animTest()
+        customViewTest()
+//        drawViewTest()
+//        animTest()
 //        touchEventTest()
 //        screenChangeTest()
 //        serviceTest()
@@ -35,6 +37,22 @@ class MainActivity : AppCompatActivity() {
 //        locationTest()
 //        imageLoaderTest()
 //        dialogInterceptorTest()
+    }
+
+    private fun customViewTest() {
+        btn1.setOnClickListener {
+            startActivity(Intent(this, CustomViewActivity::class.java))
+        }
+    }
+
+    private fun drawViewTest() {
+        btn1.setOnClickListener {
+            circleView.startMode1()
+        }
+
+        btn2.setOnClickListener {
+            circleView.startMode2()
+        }
     }
 
     private fun animTest() {
